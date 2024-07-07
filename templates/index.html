@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: rgb(255,255,255);
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(252,255,168,1) 100%);
+        }
+        #button {
+            border-radius: 35px;
+        }
+    </style>
+</head>
+<body class="container">
+ <nav class="navbar navbar-expand-lg justify-content-between row">
+            <img src="https://png.pngtree.com/png-clipart/20220903/ourmid/pngtree-chef-restaurant-logo-png-image_6136204.png" class="d-inline-block align-top " alt="Logo">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="row justify-content-end" id="navbarNav">
+
+             <div class="col-4">
+               <a class="nav-link nav-item" href="#menu-section"><h1>Gallery</h1></a>
+            </div>
+            <div class="col-4 ">
+               <a class="nav-link link-dark " href="#menu-section"><h1>AboutUs</h1></a>
+            </div>
+            <div class="col-4">
+               <a class="nav-link" href="#menu-section"><h1>Contact</h1></a>
+            </div>
+        </div>
+    </nav>
+  <div class=" row justify-content-around">
+    <div class="col-4">
+        <h1>
+            Enjoy the Taste
+        </h1>
+        <h1>
+            of Italy
+        </h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet asperiores aspernatur blanditiis
+            consequuntur dolorem dolorum earum excepturi in mollitia, nam nihil officia recusandae rem repudiandae rerum
+            similique vel, veniam?</p>
+        <br/>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <a href="#menu-section">
+                    <button class="btn btn-danger round" id="button">BOOK A TABLE</button>
+                </a>
+            </div>
+            <div class="col-6">
+                    <a href="#menu-section">
+                        <button class="btn btn-danger round" id="button">SEE THE MENU</button>
+                    </a>
+                </div>
+        </div>
+    </div>
+    <div class="col-4">
+      <img width="500" height="500" src="../static/images/bolognese.png" class="">
+    </div>
+  </div>
+    <div class="container" id="menu-section">
+        <header class="text-center my-4">
+            <h1>Menu</h1>
+            <form class="justify-content-center" method="get" action="/">
+                <input class="form-control" type="text" name="search" placeholder="Find your next favorite dish!" value="{{ request.args.get('search', '') }}">
+                <button class="btn btn-primary mt-3" type="submit">Search</button>
+            </form>
+        </header>
+        <nav class="text-center my-4">
+            <a class="btn btn-outline-secondary mx-1" href="/?category=all">All</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=Pizza">Pizza</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=Pasta">Pasta</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=Gelato">Gelato</a>
+        </nav>
+        <main>
+            <div class="row">
+                {% for item in food_items %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ item.image_url }}" alt="{{ item.name }}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">{{ item.size }} - ${{ item.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
