@@ -71,16 +71,16 @@
     <div class="container" id="menu-section">
         <header class="text-center my-4">
             <h1>Menu</h1>
-            <form class="justify-content-center" method="get" action="/">
+            <form class="justify-content-center" method="get" action="/#menu-section">
                 <input class="form-control" type="text" name="search" placeholder="Find your next favorite dish!" value="{{ request.args.get('search', '') }}">
                 <button class="btn btn-primary mt-3" type="submit">Search</button>
             </form>
         </header>
         <nav class="text-center my-4">
-            <a class="btn btn-outline-secondary mx-1" href="/?category=all">All</a>
-            <a class="btn btn-outline-secondary mx-1" href="/?category=Pizza">Pizza</a>
-            <a class="btn btn-outline-secondary mx-1" href="/?category=Pasta">Pasta</a>
-            <a class="btn btn-outline-secondary mx-1" href="/?category=Gelato">Gelato</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=all#menu-section">All</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=Pizza#menu-section">Pizza</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=Pasta#menu-section">Pasta</a>
+            <a class="btn btn-outline-secondary mx-1" href="/?category=Gelato#menu-section">Gelato</a>
         </nav>
         <main>
             <div class="row">
@@ -259,7 +259,7 @@
           </div>
 
           <div class="col-lg-8">
-            <form>
+            <form action="{{ url_for('submit_contact') }}" method="POST">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -291,7 +291,46 @@
 
       </div>
 
-    </section><!-- /Contact Section -->
+    </section>
+    <div class="row justify-content-center w-100">
+        <div class="section-title d-flex align-items-center justify-content-center pt-5 col-4" id="review">
+            <h1>Reviews</h1>
+        </div>
+    </div>
+    <section class="justify-content-center w-100 row">
+        <form  method="POST" action="{{ url_for('submit_review') }}">
+            <div class="row gy-4">
+                <div class="col-md-12">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-12 pt-1">
+                    <textarea class="form-control" name="review" rows="4" placeholder="Your Review" required></textarea>
+                </div>
+                <div class="col-md-12 text-center pt-3">
+                    <button class="btn btn-primary" type="submit">Submit Review</button>
+                </div>
+            </div>
+        </form>
+        <div class="w-100" style="height: 100px;"></div>
+        <table class="table table-light table-striped w-75">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Review</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  {%for r in reviews%}
+      <tr>
+          <th>{{ r.id }}</th>
+          <th>{{ r.name }}</th>
+          <th>{{ r.review }}</th>
+      </tr>
+  {%endfor%}
+  </tbody>
+</table>
+    </section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

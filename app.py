@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request
-from models import db, FoodItem
+from flask import Flask, render_template, request, jsonify, redirect
+from models import db, FoodItem, Contact, Review
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///food.db'
@@ -11,7 +11,6 @@ db.init_app(app)
 def index():
     search_query = request.args.get('search', '')
     category_filter = request.args.get('category', 'all')
-    size_filter = request.args.get('size', 'all')
 
     food_items = FoodItem.query
 
@@ -21,11 +20,43 @@ def index():
     if category_filter != 'all':
         food_items = food_items.filter_by(category=category_filter)
 
-    if size_filter != 'all':
-        food_items = food_items.filter_by(size=size_filter)
-
     food_items = food_items.all()
-    return render_template('index.html', food_items=food_items)
+
+    reviews = Review.query.all()
+    return render_template('index.html', food_items=food_items, reviews=reviews)
+
+
+@app.route('/submit_contact', methods=['POST'])
+def submit_contact():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    subject = request.form.get('subject')
+    message = request.form.get('message')
+
+    if not name or not email or not subject or not message:
+        return jsonify({'error': 'All fields are required'}), 400
+
+    new_contact = Contact(name=name, email=email, subject=subject, message=message)
+    db.session.add(new_contact)
+    db.session.commit()
+
+    return redirect('/')
+
+
+@app.route('/submit_review', methods=['POST'])
+def submit_review():
+    name = request.form.get('name')
+    review = request.form.get('review')
+
+
+    if not name or not review:
+        return jsonify({'error': 'All fields are required'}), 400
+
+    new_review = Review(name=name, review=review)
+    db.session.add(new_review)
+    db.session.commit()
+
+    return redirect('/#review')
 
 
 def populate_db():
