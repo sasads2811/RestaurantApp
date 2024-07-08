@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="icon" type="image/x-icon" href="../static/favicon.png">
     <style>
         body {
             background: rgb(255,255,255);
@@ -24,13 +25,13 @@
         <div class="row justify-content-end" id="navbarNav">
 
              <div class="col-4">
-               <a class="nav-link nav-item" href="#menu-section"><h1>Gallery</h1></a>
+               <a class="nav-link nav-item" href="#gallery"><h1>Gallery</h1></a>
             </div>
             <div class="col-4 ">
-               <a class="nav-link link-dark " href="#menu-section"><h1>AboutUs</h1></a>
+               <a class="nav-link link-dark " href="#aboutus"><h1>AboutUs</h1></a>
             </div>
             <div class="col-4">
-               <a class="nav-link" href="#menu-section"><h1>Contact</h1></a>
+               <a class="nav-link" href="#contact"><h1>Contact</h1></a>
             </div>
         </div>
     </nav>
@@ -64,6 +65,9 @@
       <img width="500" height="500" src="../static/images/bolognese.png" class="">
     </div>
   </div>
+ <div class="w-100 row"
+ style="height: 70px;">
+ </div>
     <div class="container" id="menu-section">
         <header class="text-center my-4">
             <h1>Menu</h1>
@@ -93,6 +97,201 @@
                 {% endfor %}
             </div>
         </main>
+    </div>
+    <div class="w-100" style="height: 70px"></div>
+    <div class="section-title d-flex align-items-center justify-content-center pt-5" id="gallery">
+        <h1>Gallery</h1>
+      </div>
+        <div class="row justify-content-between pt-5">
+        <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+        <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+            <div class="w-100 pt-5"></div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+            <div class="w-100 pt-5"></div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-7.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-8.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+            <div class="col-lg-3 col-md-4 pb-5">
+            <div class="gallery-item">
+              <a href="../static/images/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="../static/images/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+      <div class="w-100" style="height: 100px"></div>
+    <section id="about" class="about section pb-5">
+        <div class="section-title d-flex align-items-center justify-content-center pb-5" id="aboutus">
+        <h1>About Us</h1>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="../static/images/about.jpg" class="img-fluid about-img" alt="">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>Voluptatem dignissimos provident</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+            <div class="w-100" style="height: 50px"></div>
+    <section>
+
+     <div class="section-title d-flex align-items-center justify-content-center pt-5" id="contact">
+        <h1>Contact</h1>
+      </div>
+
+      <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+        <iframe style="border:0; width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Location</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Open Hours</h3>
+                <p>Monday-Saturday:<br>11:00 AM - 2300 PM</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@example.com</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form>
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12 pt-1">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12 pt-1">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center pt-3">
+
+                  <button class="btn btn-primary" type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

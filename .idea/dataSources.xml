@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Kaca\Desktop\RestaurantApp\instance\food.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="food [2]" uuid="1fce94b0-bc5b-4595-a876-da6155da95c1">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/instance/food.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
